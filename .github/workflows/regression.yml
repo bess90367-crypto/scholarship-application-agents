@@ -1,0 +1,29 @@
+name: Scholarship regression
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '0 1 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -v
+      - name: Validate agent TOML and requirement IDs
+        run: |
+          python - <<'PY'
+          import json, pathlib, tomllib
+          for path in pathlib.Path('.codex/agents').glob('*.toml'):
+              item = tomllib.loads(path.read_text())
+              assert all(item.get(k) for k in ('name', 'description', 'developer_instructions'))
+          rows = json.loads(pathlib.Path('knowledge/requirements.json').read_text())
+          assert len({r['id'] for r in rows}) == len(rows)
+          PY

@@ -1,0 +1,38 @@
+{
+  "rules": {
+    "id": "SYNTHETIC-DEMO-ONLY",
+    "status": "confirmed"
+  },
+  "courses": [
+    {
+      "id": "demo-1",
+      "name": "合成課程甲",
+      "term": "範例學期",
+      "raw_text": "合成示例 3 學分 80 分",
+      "credits": 3,
+      "score": 80,
+      "include": true,
+      "status": "confirmed",
+      "source": {
+        "document_id": "SYNTHETIC",
+        "page": 1,
+        "locator": "row 1"
+      }
+    },
+    {
+      "id": "demo-2",
+      "name": "合成課程乙",
+      "term": "範例學期",
+      "raw_text": "合成示例 2 學分 0 分",
+      "credits": 2,
+      "score": 0,
+      "include": true,
+      "status": "confirmed",
+      "source": {
+        "document_id": "SYNTHETIC",
+        "page": 1,
+        "locator": "row 2"
+      }
+    }
+  ]
+}

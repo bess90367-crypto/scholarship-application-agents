@@ -1,0 +1,58 @@
+[
+  {
+    "id": "REQ-001",
+    "status": "confirmed",
+    "scope": "orchestration",
+    "source": "user-request",
+    "date": "2026-10-28",
+    "acceptance": "使用者只和主管互動；角色涵蓋抽取、模板、計算、品質、知識及維護"
+  },
+  {
+    "id": "REQ-002",
+    "status": "confirmed",
+    "scope": "extraction",
+    "source": "user-request",
+    "date": "2026-10-28",
+    "acceptance": "PDF 或影像先產出文字並保留逐頁來源"
+  },
+  {
+    "id": "REQ-003",
+    "status": "confirmed",
+    "scope": "privacy",
+    "source": "public-repository-boundary",
+    "date": "2026-10-28",
+    "acceptance": "公開倉庫無申請人資料；測試僅用合成資料"
+  },
+  {
+    "id": "REQ-004",
+    "status": "confirmed",
+    "scope": "calculation",
+    "source": "template-defect-review",
+    "date": "2026-10-28",
+    "acceptance": "零分納入學分分母，缺值阻擋正式計算"
+  },
+  {
+    "id": "REQ-005",
+    "status": "confirmed",
+    "scope": "maintenance",
+    "source": "user-request",
+    "date": "2026-10-28",
+    "acceptance": "可見的可泛化要求去重更新並通過測試；明確揭露跨對話可見性限制"
+  },
+  {
+    "id": "REQ-006",
+    "status": "confirmed",
+    "scope": "template-inspection",
+    "source": "template-review",
+    "date": "2026-10-28",
+    "acceptance": "陣列公式保留文字與範圍；數值型別、列高、欄寬可追溯"
+  },
+  {
+    "id": "REQ-007",
+    "status": "confirmed",
+    "scope": "course-mapping",
+    "source": "template-review",
+    "date": "2026-10-28",
+    "acceptance": "上下學期分離；重複課程映射阻擋；識別碼前導零保留；模板與成績單學分差異不靜默覆寫"
+  }
+]
