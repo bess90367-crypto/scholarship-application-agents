@@ -54,5 +54,29 @@
     "source": "template-review",
     "date": "2026-10-28",
     "acceptance": "上下學期分離；重複課程映射阻擋；識別碼前導零保留；模板與成績單學分差異不靜默覆寫"
+  },
+  {
+    "id": "REQ-008",
+    "status": "confirmed",
+    "scope": "workbook-layout",
+    "source": "user-request-and-historical-layout-review",
+    "date": "2026-10-29",
+    "acceptance": "每人以實際學號識別並以姓名命名單一工作表；全部個人資料在同表，共用模板/參數可保留；同名後綴可重現且符合 Excel 名稱限制"
+  },
+  {
+    "id": "REQ-009",
+    "status": "confirmed",
+    "scope": "private-on-demand-source",
+    "source": "user-request-and-historical-layout-review",
+    "date": "2026-10-29",
+    "acceptance": "Drive URL/ID 僅私有設定；依當次明確學期精確匹配資料夾/路徑元件，不從修課年份推定申請期，不自動匯入"
+  },
+  {
+    "id": "REQ-010",
+    "status": "confirmed",
+    "scope": "delivery-history-review",
+    "source": "user-request-and-historical-layout-review",
+    "date": "2026-10-29",
+    "acceptance": "交付可下載 Excel；歷史姓名/表名缺陷及非唯一編號不沿用，N2 臨時計算不升格為通用規則，未知政策持續待確認"
   }
 ]

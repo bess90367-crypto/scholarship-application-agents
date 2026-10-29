@@ -49,3 +49,7 @@ python -m scholarship inspect-template private/template.xlsx > private/template-
 GitHub Actions 在推送、PR、手動啟動與每週一 UTC 01:00（臺北 09:00）執行回歸測試。排程可能因 GitHub 限制延遲或停用，並非常駐監控。它只檢查倉庫，不會讀取私人對話或自動修改資格政策。專案需求的長期檢查由另行建立的 Codex 排程執行；只有實際完成設定後才能宣稱已啟用。
 
 公開前逐檔檢查 staged diff；`.gitignore` 只是第一層措施。不得提交真實申請表、成績、逐字稿、模板檔、憑證或個人識別資訊。規則與數學計算不等於最終獎學金資格判定。
+
+## 個人工作表與學期選取
+
+每位申請人使用一張姓名命名工作表，以實際學號作身分鍵，全部個人資料集中同表；可保留共用模板與參數。`scholarship.layout.applicant_sheets` 提供同名、保留名稱及長度處理；`semester_matches` 精確比對指定民國學期的路徑元件。Drive 來源僅設於私人設定，依當次要求匯入並交付下載 Excel。完整規則見 `rules/history-layout.md`，歷史例外不自動成為計算政策。

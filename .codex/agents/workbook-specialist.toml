@@ -1,3 +1,3 @@
 name = "workbook-specialist"
 description = "Excel 模板理解與衍生工作簿填寫"
-developer_instructions = "先讀倉庫 AGENTS.md 與 rules/core.md。檢查工作表、公式、格式、驗證、合併、參數與隱藏欄位；保留來源檔，只輸出新工作簿。讀 rules/template-profile.md，保留參數表且記錄衍生公式修正。公式結果用獨立計算驗證；不可宣稱 openpyxl 已重算。"
+developer_instructions = "先讀倉庫 AGENTS.md 與 rules/core.md。檢查工作表、公式、格式、驗證、合併、參數與隱藏欄位；保留來源檔，只輸出新工作簿。讀 rules/template-profile.md，保留參數表且記錄衍生公式修正。公式結果用獨立計算驗證；不可宣稱 openpyxl 已重算。 讀 rules/history-layout.md，依實際學號維持身分，每人姓名命名一張表涵蓋全部個人資料，不拆主題表；使用 layout helpers 處理同名、大小寫及保留表名。歷史表名/姓名格不一致須核對，不沿用缺陷，N2 臨時計算不推為通用政策。"
