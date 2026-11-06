@@ -17,6 +17,17 @@ class ScoringTests(unittest.TestCase):
         self.assertEqual(score(self.document)['average'], '48')
         self.assertEqual(score(self.document)['credits'], '5')
 
+    def test_earned_credits_do_not_replace_attempted_course_weights(self):
+        self.document['earned_credits'] = 3
+        self.assertEqual(score(self.document)['credits'], '5')
+        self.assertEqual(score(self.document)['average'], '48')
+
+    def test_pass_and_withdrawal_need_explicit_policy(self):
+        for symbol in ('P', 'W'):
+            self.document['courses'][1]['score'] = symbol
+            with self.subTest(symbol=symbol), self.assertRaises(ValueError):
+                score(self.document)
+
     def test_missing_not_zero(self):
         self.document['courses'][1]['score'] = None
         with self.assertRaises(ValueError): score(self.document)

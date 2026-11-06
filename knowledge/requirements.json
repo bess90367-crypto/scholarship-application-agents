@@ -29,7 +29,7 @@
     "scope": "calculation",
     "source": "template-defect-review",
     "date": "2026-10-28",
-    "acceptance": "零分納入學分分母，缺值阻擋正式計算"
+    "acceptance": "零分納入修習學分分母，實得學分不可替代；P/W不自行轉分；缺值阻擋正式計算"
   },
   {
     "id": "REQ-005",
@@ -78,5 +78,13 @@
     "source": "user-request-and-historical-layout-review",
     "date": "2026-10-29",
     "acceptance": "交付可下載 Excel；歷史姓名/表名缺陷及非唯一編號不沿用，N2 臨時計算不升格為通用規則，未知政策持續待確認"
+  },
+  {
+    "id": "REQ-011",
+    "status": "confirmed",
+    "scope": "batch-source-coverage",
+    "source": "batch-processing-failure-review",
+    "date": "2026-11-04",
+    "acceptance": "重清來源與逐頁覆蓋；大型檔以授權本機副本補齊；未讀明示部分完成；同學號跨來源保留差異且避免重複計分"
   }
 ]
