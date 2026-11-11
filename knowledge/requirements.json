@@ -110,5 +110,13 @@
     "source": "user-request",
     "date": "2026-11-11",
     "acceptance": "定期檢查近期可見需求與 GitHub 狀態，執行 regression/self-test，將可泛化的新規則或失敗案例以最小變更更新 knowledge/routing/agents/tests；無實質改善不修改，私人申請資料不作公開訓練資料"
+  },
+  {
+    "id": "REQ-015",
+    "status": "confirmed",
+    "scope": "drive-folder-naming",
+    "source": "connected-drive-verification",
+    "date": "2026-11-11",
+    "acceptance": "指定學期資料夾標準命名為「<民國學期>獎學金申請資料」（例如 115-1獎學金申請資料）；精確支援此格式，不以模糊包含匹配副本或其他相似名稱"
   }
 ]
