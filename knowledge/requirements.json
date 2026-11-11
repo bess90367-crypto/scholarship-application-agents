@@ -126,5 +126,37 @@
     "source": "explicit-user-request",
     "date": "2026-11-11",
     "acceptance": "每次交付可下載 Excel 必須複製指定歷史原檔格式；只替換已映射輸入資料，不變更樣式、欄列、合併及列印設定，不增設摘要或明細區；格式外資訊另附私有說明；逐表結構、公式、樣式與主題核對通過，不沿用歷史個資"
+  },
+  {
+    "id": "REQ-017",
+    "status": "confirmed",
+    "scope": "live-template-folder-authority",
+    "source": "explicit-user-request",
+    "date": "2026-11-11",
+    "acceptance": "每次整理重新讀取私人「獎學金申請資料整理範本」資料夾；當下所有正式範本逐一產生對應成品；不得用歷史輸出或近似重建取代，不自行修改範本格式或公式"
+  },
+  {
+    "id": "REQ-018",
+    "status": "confirmed",
+    "scope": "large-pdf-no-skip",
+    "source": "explicit-user-request",
+    "date": "2026-11-11",
+    "acceptance": "大型 PDF 不得因連接器大小限制跳過；依索引文字→原始下載→同內容分檔/可讀副本→Work/瀏覽器下載後本機切分的順序處理；仍未讀時整批不得標完整"
+  },
+  {
+    "id": "REQ-019",
+    "status": "confirmed",
+    "scope": "all-template-output-types",
+    "source": "explicit-user-request",
+    "date": "2026-11-11",
+    "acceptance": "範本資料夾存在多少正式範本與副檔名，就交付多少對應格式結果；Word/Excel 等都要依各自原檔格式填入，不只產出 Excel"
+  },
+  {
+    "id": "REQ-020",
+    "status": "confirmed",
+    "scope": "project-default-agent-routing",
+    "source": "explicit-user-request",
+    "date": "2026-11-11",
+    "acceptance": "本獎學金申請專案下所有獎學金整理對話預設套用 supervisor Agent 規則；使用者只需描述任務，不需辨認子 Agent"
   }
 ]
