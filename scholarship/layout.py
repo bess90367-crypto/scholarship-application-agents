@@ -20,12 +20,20 @@ def semester_from_request(text):
     return semester(matches[0])
 
 
+def _semester_folder_component_matches(component, requested):
+    """Match canonical semester folder names without accepting copies."""
+    return component == requested or component == requested + '獎學金申請資料'
+
+
 def semester_matches(folder_or_path, requested):
-    """Match whole path components only; never infer period from transcripts."""
+    """Match a canonical semester folder path component; never infer from transcripts."""
     requested = semester(requested)
     if not isinstance(folder_or_path, str):
         raise ValueError('folder/path must be text')
-    return requested in folder_or_path.replace('\\', '/').split('/')
+    return any(
+        _semester_folder_component_matches(component, requested)
+        for component in folder_or_path.replace('\\', '/').split('/')
+    )
 
 
 def select_semester_folder(folder_paths, requested):
@@ -66,7 +74,6 @@ def applicant_sheets(applicants, reserved=('計算模板', '(勿動!!!!!!!)參�
     for _, name in rows:
         counts[name.casefold()] = counts.get(name.casefold(), 0) + 1
     result = {}
-    # Allocate unambiguous names first so suffixes cannot steal another name.
     for key, name in sorted(rows):
         if counts[name.casefold()] == 1 and name.casefold() not in used:
             result[key] = name
