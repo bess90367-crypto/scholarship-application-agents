@@ -86,5 +86,29 @@
     "source": "batch-processing-failure-review",
     "date": "2026-11-04",
     "acceptance": "重清來源與逐頁覆蓋；大型檔以授權本機副本補齊；未讀明示部分完成；同學號跨來源保留差異且避免重複計分"
+  },
+  {
+    "id": "REQ-012",
+    "status": "confirmed",
+    "scope": "one-command-orchestration",
+    "source": "user-request",
+    "date": "2026-11-11",
+    "acceptance": "「請整理 115-1 的獎學金申請資料」等短指令可直接解析唯一民國學期，主管不要求使用者選子代理、重貼 Drive 連結或逐檔上傳，資料可讀時一路完成至可下載 Excel"
+  },
+  {
+    "id": "REQ-013",
+    "status": "confirmed",
+    "scope": "private-drive-auto-discovery",
+    "source": "user-request",
+    "date": "2026-11-11",
+    "acceptance": "從已設定的私人 Google Drive 根目錄自動尋找指定學期的唯一資料夾；實際 URL/ID 不進 public repo；來源含 PDF/影像時先轉為可追溯文字再抽取"
+  },
+  {
+    "id": "REQ-014",
+    "status": "confirmed",
+    "scope": "maintenance-self-test-learning",
+    "source": "user-request",
+    "date": "2026-11-11",
+    "acceptance": "定期檢查近期可見需求與 GitHub 狀態，執行 regression/self-test，將可泛化的新規則或失敗案例以最小變更更新 knowledge/routing/agents/tests；無實質改善不修改，私人申請資料不作公開訓練資料"
   }
 ]
