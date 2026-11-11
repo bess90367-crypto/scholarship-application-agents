@@ -158,5 +158,13 @@
     "source": "explicit-user-request",
     "date": "2026-11-11",
     "acceptance": "本獎學金申請專案下所有獎學金整理對話預設套用 supervisor Agent 規則；使用者只需描述任務，不需辨認子 Agent"
+  },
+  {
+    "id": "REQ-021",
+    "status": "confirmed",
+    "scope": "download-artifact-validation",
+    "source": "user-reported-broken-excel-link",
+    "date": "2026-11-11",
+    "acceptance": "每個正式 XLSX/DOCX 交付前驗證本次容器精確檔案路徑存在、非空、可重新開啟且格式/資料 QA 通過；不得猜測或重用失效 sandbox 連結；失敗時明確回報並先重建"
   }
 ]
