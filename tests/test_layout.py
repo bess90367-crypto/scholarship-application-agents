@@ -43,19 +43,38 @@ class LayoutTests(unittest.TestCase):
         for value in ('請整理獎學金資料', '整理 115-1 與 115-2', '整理 1115-1 資料'):
             with self.subTest(value=value), self.assertRaises(ValueError): semester_from_request(value)
 
-    def test_exact_semester_component(self):
-        for path in ('115-1', '/root/115-1/forms', 'root\\115-1\\forms'):
+    def test_canonical_semester_folder_names(self):
+        for path in (
+            '115-1',
+            '/root/115-1/forms',
+            'root\\115-1\\forms',
+            '115-1獎學金申請資料',
+            '/root/115-1獎學金申請資料/forms',
+        ):
             self.assertTrue(semester_matches(path, '115-1'))
-        for path in ('1115-1', '115-10', '/root/1115-1/forms', '/root/115-10/forms', 'prefix115-1', '115-1副本'):
+
+        for path in (
+            '1115-1',
+            '115-10',
+            '/root/1115-1/forms',
+            '/root/115-10/forms',
+            'prefix115-1',
+            '115-1副本',
+            '115-1獎學金申請資料副本',
+            '115-1其他資料',
+        ):
             self.assertFalse(semester_matches(path, '115-1'))
 
     def test_select_unique_semester_folder(self):
-        paths = ['/private/root/114-2', '/private/root/115-1', '/private/root/115-2']
-        self.assertEqual(select_semester_folder(paths, '115-1'), '/private/root/115-1')
+        paths = ['/private/root/114-2獎學金申請資料', '/private/root/115-1獎學金申請資料', '/private/root/115-2獎學金申請資料']
+        self.assertEqual(
+            select_semester_folder(paths, '115-1'),
+            '/private/root/115-1獎學金申請資料',
+        )
         with self.assertRaises(ValueError):
-            select_semester_folder(['/a/115-1', '/b/115-1'], '115-1')
+            select_semester_folder(['/a/115-1', '/b/115-1獎學金申請資料'], '115-1')
         with self.assertRaises(ValueError):
-            select_semester_folder(['/a/114-2'], '115-1')
+            select_semester_folder(['/a/114-2獎學金申請資料'], '115-1')
 
     def test_invalid_or_missing_semester_blocks(self):
         for value in (None, '', '115', '115-3', '0115-1', 115):
