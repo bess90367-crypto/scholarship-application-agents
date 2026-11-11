@@ -166,5 +166,13 @@
     "source": "user-reported-broken-excel-link",
     "date": "2026-11-11",
     "acceptance": "每個正式 XLSX/DOCX 交付前驗證本次容器精確檔案路徑存在、非空、可重新開啟且格式/資料 QA 通過；不得猜測或重用失效 sandbox 連結；失敗時明確回報並先重建"
+  },
+  {
+    "id": "REQ-022",
+    "status": "confirmed",
+    "scope": "strict-word-template-manual-regions",
+    "source": "explicit-user-request",
+    "date": "2026-11-11",
+    "acceptance": "Word 申請名單直接沿用指定歷史 DOCX 格式；目前系上各獎學金狀況與各獎學金申請人數完整區域內容及格式保持原樣供人工處理，包含歷史學期與數字；僅更新有來源的當期申請名單，保留區 OOXML 及逐頁視覺檢核通過並交付可下載 DOCX"
   }
 ]

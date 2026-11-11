@@ -2,6 +2,8 @@
 
 本專案有一個由 ChatGPT 專案私人設定保存的「獎學金申請資料整理範本」Google Drive 資料夾。實際 URL/ID 不進 public GitHub。
 
+本機私有設定為專案 `outputs/template-source.json`。Word 申請名單另須遵守 `rules/word-template.md`：兩個人工處理區的原內容及格式均保留，不更新其年份或數字。
+
 每次整理開始都必須 live list 該資料夾。資料夾內當下的正式範本檔是唯一格式權威；不能使用上一次下載快取或自行建立的近似檔替代。
 
 ## 一對一交付
