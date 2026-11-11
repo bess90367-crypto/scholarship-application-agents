@@ -1,5 +1,11 @@
 import unittest
-from scholarship.layout import applicant_sheets, semester, semester_matches
+from scholarship.layout import (
+    applicant_sheets,
+    semester,
+    semester_from_request,
+    semester_matches,
+    select_semester_folder,
+)
 
 
 class LayoutTests(unittest.TestCase):
@@ -29,12 +35,31 @@ class LayoutTests(unittest.TestCase):
     def test_name_whitespace_does_not_define_identity(self):
         self.assertEqual(applicant_sheets([{'student_id': '0001', 'name': '  合成姓名  '}]), {'0001': '合成姓名'})
 
+    def test_extract_semester_from_short_request(self):
+        self.assertEqual(semester_from_request('請整理 115-1 的獎學金申請資料'), '115-1')
+        self.assertEqual(semester_from_request('麻煩整理115-2獎學金申請'), '115-2')
+
+    def test_request_requires_one_unambiguous_semester(self):
+        for value in ('請整理獎學金資料', '整理 115-1 與 115-2', '整理 1115-1 資料'):
+            with self.subTest(value=value), self.assertRaises(ValueError): semester_from_request(value)
+
     def test_exact_semester_component(self):
         for path in ('115-1', '/root/115-1/forms', 'root\\115-1\\forms'):
             self.assertTrue(semester_matches(path, '115-1'))
         for path in ('1115-1', '115-10', '/root/1115-1/forms', '/root/115-10/forms', 'prefix115-1', '115-1副本'):
             self.assertFalse(semester_matches(path, '115-1'))
 
+    def test_select_unique_semester_folder(self):
+        paths = ['/private/root/114-2', '/private/root/115-1', '/private/root/115-2']
+        self.assertEqual(select_semester_folder(paths, '115-1'), '/private/root/115-1')
+        with self.assertRaises(ValueError):
+            select_semester_folder(['/a/115-1', '/b/115-1'], '115-1')
+        with self.assertRaises(ValueError):
+            select_semester_folder(['/a/114-2'], '115-1')
+
     def test_invalid_or_missing_semester_blocks(self):
         for value in (None, '', '115', '115-3', '0115-1', 115):
             with self.subTest(value=value), self.assertRaises(ValueError): semester(value)
+
+
+if __name__ == '__main__': unittest.main()
