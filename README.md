@@ -65,4 +65,8 @@ GitHub Actions 在推送、PR、手動啟動與每週一 UTC 01:00（臺北 09:0
 
 ## 個人工作表與學期選取
 
-每位申請人使用一張姓名命名工作表，以實際學號作身分鍵，全部個人資料集中同表；可保留共用模板與參數。`scholarship.layout.applicant_sheets` 提供同名、保留名稱及長度處理；`semester_matches` 精確比對指定民國學期的路徑元件。Drive 來源僅設於私人設定，依當次要求匯入並交付下載 Excel。完整規則見 `rules/history-layout.md`，歷史例外不自動成為計算政策。
+每位申請人使用一張姓名命名工作表，以實際學號作身分鍵，原版面可容納的資料集中同表，其餘另附私有說明；保留共用模板與參數。`scholarship.layout.applicant_sheets` 提供同名、保留名稱及長度處理；`semester_matches` 精確比對指定民國學期的路徑元件。Drive 來源僅設於私人設定，依當次要求匯入並交付下載 Excel。完整規則見 `rules/history-layout.md`，歷史例外不自動成為計算政策。
+
+## 固定原檔格式交付
+
+依 REQ-016，整理結果必須直接沿用使用者指定的歷史 Excel 格式，一人一張姓名分頁。原格式母版只保存在私有設定；不得重排、換色、變更欄列或增加明細區。每次交付前執行 `scholarship.format_guard` 並核對資料、公式與視覺呈現；超出模板的資料及待確認事項另附私有說明。完整規則見 `rules/history-layout.md`。

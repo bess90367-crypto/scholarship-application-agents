@@ -61,7 +61,7 @@
     "scope": "workbook-layout",
     "source": "user-request-and-historical-layout-review",
     "date": "2026-10-29",
-    "acceptance": "每人以實際學號識別並以姓名命名單一工作表；全部個人資料在同表，共用模板/參數可保留；同名後綴可重現且符合 Excel 名稱限制"
+    "acceptance": "每人以實際學號識別並以姓名命名單一工作表；原版面可容納資料集中同表，共用模板/參數保留；其餘另附私有說明；同名後綴可重現且符合 Excel 名稱限制"
   },
   {
     "id": "REQ-009",
@@ -118,5 +118,13 @@
     "source": "connected-drive-verification",
     "date": "2026-11-11",
     "acceptance": "指定學期資料夾標準命名為「<民國學期>獎學金申請資料」（例如 115-1獎學金申請資料）；精確支援此格式，不以模糊包含匹配副本或其他相似名稱"
+  },
+  {
+    "id": "REQ-016",
+    "status": "confirmed",
+    "scope": "strict-historical-format",
+    "source": "explicit-user-request",
+    "date": "2026-11-11",
+    "acceptance": "每次交付可下載 Excel 必須複製指定歷史原檔格式；只替換已映射輸入資料，不變更樣式、欄列、合併及列印設定，不增設摘要或明細區；格式外資訊另附私有說明；逐表結構、公式、樣式與主題核對通過，不沿用歷史個資"
   }
 ]
