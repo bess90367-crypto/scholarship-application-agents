@@ -10,12 +10,32 @@ def semester(value):
     return value
 
 
+def semester_from_request(text):
+    """Extract exactly one ROC semester from a natural-language request."""
+    if not isinstance(text, str) or not text.strip():
+        raise ValueError('request text required')
+    matches = sorted(set(re.findall(r'(?<![0-9])([1-9][0-9]{0,2}-[12])(?![0-9])', text)))
+    if len(matches) != 1:
+        raise ValueError('request must contain exactly one ROC semester')
+    return semester(matches[0])
+
+
 def semester_matches(folder_or_path, requested):
     """Match whole path components only; never infer period from transcripts."""
     requested = semester(requested)
     if not isinstance(folder_or_path, str):
         raise ValueError('folder/path must be text')
     return requested in folder_or_path.replace('\\', '/').split('/')
+
+
+def select_semester_folder(folder_paths, requested):
+    """Return the single folder path matching the requested ROC semester."""
+    if not isinstance(folder_paths, (list, tuple)):
+        raise ValueError('folder paths must be a list or tuple')
+    matches = [path for path in folder_paths if semester_matches(path, requested)]
+    if len(matches) != 1:
+        raise ValueError('expected exactly one matching semester folder')
+    return matches[0]
 
 
 def _base_name(value):
