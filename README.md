@@ -28,6 +28,19 @@ python -m scholarship inspect-template private/template.xlsx > private/template-
 
 `inspect-template` 輸出一般與陣列公式（含作用範圍）、保留型別的內容、樣式 ID、格式、列高、欄寬、合併、驗證、隱藏列欄及命名範圍。輸出可能含私人資料，不能提交。Excel 實際填寫由 workbook-specialist 依當次模板完成；本 CLI 不宣稱對任意模板自動填寫或重算公式。詳細模板觀察見 `rules/template-profile.md`。
 
+
+## 一句話整理指定學期
+
+主管支援直接輸入：
+
+```text
+請整理 115-1 的獎學金申請資料
+```
+
+這類短指令會被視為完整任務。主管會解析民國學期，從已設定的私人 Google Drive 根目錄自動尋找對應學期資料夾，清點來源；PDF/影像先轉成可追溯文字，再依既有 Excel 模板規則整理、計算與品質檢核，最後直接交付可下載的 `.xlsx`。使用者不必選擇子代理、重新提供既有 Drive 根目錄或逐檔上傳。
+
+執行環境必須先具備該私人 Drive 的存取權。實際 Drive URL/ID、申請人資料及輸出檔不寫入 public repository；公開倉庫只保留流程與合成測試。詳細規則見 `rules/drive-workflow.md`。
+
 ## 分工與資料夾
 
 | 角色 | 責任 |
