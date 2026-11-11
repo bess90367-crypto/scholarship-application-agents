@@ -15,3 +15,7 @@
 公開倉庫只放程式、去識別規則與合成測試。真實姓名、學號、成績、原始文件及私人 Drive URL/ID 留在私人專案設定或執行環境，不寫入 public repository。
 
 每次收到新的可泛化要求，先讀 `knowledge/requirements.json`，用穩定 ID 去重並增加合成 regression tests。未確認的資格、採計範圍或換算政策不得自行升格為正式規則。
+
+## 交付連結 QA（不可省略）
+
+所有 XLSX/DOCX 正式成品在回覆使用者前，必須在**本次執行的實際容器**中確認精確路徑存在、檔案大小大於零，並呼叫 `scholarship.delivery_guard.validate_deliverable` 重新開啟驗證；同時執行既有範本格式與資料 QA。只有上述檢查通過且檔案確實位於可下載的 sandbox 路徑時，才能提供 `sandbox:/mnt/data/...` 連結。不可根據檔名、歷史對話、GitHub 檔案或雲端檔案名稱自行猜測 sandbox 路徑。若本次環境找不到先前產物，必須明確告知連結無法恢復，不得重複貼出失效連結；重新取得原始來源與範本後才可重建並交付。
