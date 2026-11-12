@@ -24,7 +24,16 @@ class SourcePolicyTests(unittest.TestCase):
             "work_browser_download_and_split",
         )
 
-    def test_verified_split_copy_precedes_browser(self):
+    def test_authenticated_direct_stream_precedes_browser(self):
+        self.assertEqual(
+            large_file_route(
+                RAW_DOWNLOAD_LIMIT_BYTES + 1,
+                direct_stream_available=True,
+            ),
+            "direct_stream_download_and_split",
+        )
+
+    def test_verified_split_copy_is_used_when_no_direct_stream(self):
         self.assertEqual(
             large_file_route(RAW_DOWNLOAD_LIMIT_BYTES + 1, verified_split_copy=True),
             "verified_split_copy",
@@ -32,7 +41,11 @@ class SourcePolicyTests(unittest.TestCase):
 
     def test_user_split_is_only_last_resort(self):
         self.assertEqual(
-            large_file_route(RAW_DOWNLOAD_LIMIT_BYTES + 1, browser_available=False),
+            large_file_route(
+                RAW_DOWNLOAD_LIMIT_BYTES + 1,
+                direct_stream_available=False,
+                browser_available=False,
+            ),
             "user_split_required",
         )
         self.assertLess(RECOMMENDED_SPLIT_BYTES, RAW_DOWNLOAD_LIMIT_BYTES)
