@@ -174,5 +174,21 @@
     "source": "explicit-user-request",
     "date": "2026-11-11",
     "acceptance": "Word 申請名單直接沿用指定歷史 DOCX 格式；目前系上各獎學金狀況與各獎學金申請人數完整區域內容及格式保持原樣供人工處理，包含歷史學期與數字；僅更新有來源的當期申請名單，保留區 OOXML 及逐頁視覺檢核通過並交付可下載 DOCX"
+  },
+  {
+    "id": "REQ-023",
+    "status": "confirmed",
+    "scope": "word-excel-score-mapping",
+    "source": "explicit-user-correction",
+    "date": "2026-11-12",
+    "acceptance": "配對歷史Excel/Word確認歷年必修、前學年及平均映射；依年級選值，以完整精度各半後四捨五入兩位；揭露歷史欄位倒置，不硬抄固定年級公式或以缺值作零"
+  },
+  {
+    "id": "REQ-024",
+    "status": "confirmed",
+    "scope": "cross-award-checkbox",
+    "source": "explicit-user-correction",
+    "date": "2026-11-12",
+    "acceptance": "依當期完整已提供批次按學號比對不同獎項，單獎項勾選、多獎項不勾、未完整或身分不明待確認；區分原表聲明與批次推導"
   }
 ]
