@@ -190,5 +190,13 @@
     "source": "explicit-user-correction",
     "date": "2026-11-12",
     "acceptance": "依當期完整已提供批次按學號比對不同獎項，單獎項勾選、多獎項不勾、未完整或身分不明待確認；區分原表聲明與批次推導"
+  },
+  {
+    "id": "REQ-025",
+    "status": "confirmed",
+    "scope": "source-application-number-order",
+    "source": "explicit-user-correction",
+    "date": "2026-11-12",
+    "acceptance": "各獎學金原表內依申請資料明確編號按數值排序，保留原編號及跳號；確認空白者排最後且不擅補編，未辨識不得冒充空白，重號及空白維持來源穩定次序並記錄疑義"
   }
 ]
