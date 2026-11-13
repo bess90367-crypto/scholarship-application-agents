@@ -12,6 +12,13 @@ class SourcePolicyTests(unittest.TestCase):
     def test_normal_file_uses_raw_download(self):
         self.assertEqual(large_file_route(10_000_000), "raw_download")
 
+    def test_raw_download_limit_boundary(self):
+        self.assertEqual(large_file_route(RAW_DOWNLOAD_LIMIT_BYTES), "raw_download")
+        self.assertEqual(
+            large_file_route(RAW_DOWNLOAD_LIMIT_BYTES + 1),
+            "work_browser_download_and_split",
+        )
+
     def test_complete_indexed_text_can_be_used(self):
         self.assertEqual(
             large_file_route(RAW_DOWNLOAD_LIMIT_BYTES + 1, indexed_text_complete=True),
